@@ -1,6 +1,8 @@
 <template>
+
+  
   <div>
-    <div class="container mx-auto flex mt-20 border-b border-gray-600 pb-2">
+    <div>
       <img :src="posterPath" alt="" class="w-64 md:w-full" />
       <div class="ml-24">
         <h1 class="text-4xl font-semibold">{{ this.tv.title }}</h1>
@@ -33,10 +35,7 @@
 
 <script>
 export default {
-    components: {
-
-    },
-    watch: {
+        watch: {
         "$route.params.id": {
             handler() {
                 this.fetchShow(this.$route.params.id);
@@ -47,15 +46,16 @@ export default {
     methods: {
         async fetchShow(showId) {
             const response = await this.$http.get(
-                "/tv/" + showId + "?append_to_response=credits,videos,images"
+                "/tv/" + showId
             );
             this.tv = response.data;
+            console.log(this.tv.name);
         },
     },
     computed: {
-        posterPath() {
-            return "https://image.tmdb.org/t/p/w500/" + this.movie.poster_path;
-        },
+    posterPath() {
+      return "https://image.tmdb.org/t/p/w500" + this.tv.poster_path;
+    },
     }
 }    
 </script>
