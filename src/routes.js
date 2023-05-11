@@ -25,7 +25,7 @@ const router = new VueRouter({
         },
         {
             path: "/tv/:id",
-            name: "tvshow",
+            name: "tv",
             component: TvShow,
           },
     ],
