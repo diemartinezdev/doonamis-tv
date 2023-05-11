@@ -1,6 +1,4 @@
 <template>
-
-  
   <div>
     <div>
       <img :src="posterPath" alt="" class="w-64 md:w-full" />
@@ -28,35 +26,33 @@
             >{{ this.tv.number_of_episodes }} Episodes</span
           >
         </div>
-        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-        watch: {
-        "$route.params.id": {
-            handler() {
-                this.fetchShow(this.$route.params.id);
-            },
-            immediate: true,
-        },
+  watch: {
+    "$route.params.id": {
+      handler() {
+        this.fetchShow(this.$route.params.id);
+      },
+      immediate: true,
     },
-    methods: {
-        async fetchShow(showId) {
-            const response = await this.$http.get(
-                "/tv/" + showId
-            );
-            this.tv = response.data;
-            console.log(this.tv.name);
-        },
+  },
+  methods: {
+    async fetchShow(showId) {
+      const response = await this.$http.get("/tv/" + showId);
+      this.tv = response.data;
+      console.log(this.tv.name);
     },
-    computed: {
+  },
+  computed: {
     posterPath() {
       return "https://image.tmdb.org/t/p/w500" + this.tv.poster_path;
     },
-    }
-}    
+  },
+};
 </script>
 <style></style>
