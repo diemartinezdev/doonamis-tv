@@ -2,25 +2,20 @@
   <div>
     <h2>Most Popular</h2>
     <div class="container">
-    <ShowItem 
-    :key="tv.id"
-    v-for="tv in tvs"
-    :tv="tv"
-    :genres="genres"
-    />
+      <ShowItem :key="tv.id" v-for="tv in tvs" :tv="tv" :genres="genres" />
+    </div>
   </div>
-</div>
 </template>
 
 <script>
-import ShowItem from '../ShowItem.vue'
+import ShowItem from "../ShowItem.vue";
 
 export default {
-    components: {
-        ShowItem,
-    },
-    
-  data: function() {
+  components: {
+    ShowItem,
+  },
+
+  data: function () {
     return {
       tvs: [],
       genres: [],
@@ -30,7 +25,7 @@ export default {
     this.fetchGenres();
     try {
       const response = await this.$http.get("/tv/popular");
-        this.tvs = response.data.results;
+      this.tvs = response.data.results;
     } catch (error) {
       console.log(error);
     }
@@ -46,23 +41,23 @@ export default {
       }
     },
   },
-}
+};
 </script>
 
 <style>
- h2 {
-    font-size: 160%;
-    color: #a14c17;
-    font-weight: bolder;
-    text-transform: uppercase;
-    margin-top: 2vh;
-    text-align: center;
-  }
-  
-  .container {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-        grid-gap: 2vw;
-        justify-items: center;
-  }
+h2 {
+  font-size: 160%;
+  color: #a14c17;
+  font-weight: bolder;
+  text-transform: uppercase;
+  margin-top: 2vh;
+  text-align: center;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-gap: 2vw;
+  justify-items: center;
+}
 </style>

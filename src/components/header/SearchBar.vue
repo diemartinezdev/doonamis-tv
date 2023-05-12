@@ -1,27 +1,29 @@
 <template>
   <div>
     <input
-      class="search"
+      ref="searchBox"
       type="text"
-      placeholder="Search..."
+      class="search"
+      placeholder="Search.."
+      @input="debounceSearch"
       v-model="searchTerm"
+      @focus="handleFocus"
     />
-    <div class="absolute mt-12 rounded bg-gray-600 w-60 z-50">
-      <ul class="mt-3" v-if="showSearchResult">
+    <div id="results">
+      <ul v-if="showSearchResult">
         <li :key="index" v-for="(tv, index) in searchResult">
           <router-link
             :to="`/tv/${tv.id}`"
             @click.native="showSearchResult = false"
-            class="flex items-center border-b border-gray-500 p-1"
           >
-            <img :src="posterPath(tv.poster_path)" alt="" class="w-10" />
-            <span class="ml-3">{{ tv.title }}</span>
+            <img :src="posterPath(tv.poster_path)" alt="" />
+            <p>{{ tv.name }}</p>
           </router-link>
         </li>
       </ul>
-      <ul class="px-3" v-if="searchResult.length == 0 && showSearchResult">
-        <li>No result found for "{{ searchTerm }}"</li>
-      </ul>
+      <div v-if="searchResult.length == 0 && showSearchResult">
+        <p id="notfound">No result found for "{{ searchTerm }}"</p>
+      </div>
     </div>
     <a href="https://www.themoviedb.org/" target="_blank"
       ><img src="@/assets/tmdb-logo.png" alt="tmdb logo"
@@ -78,7 +80,7 @@ export default {
       });
 
       window.addEventListener("keypress", (e) => {
-        if (e.keyCode == "47") {
+        if (e.key == "47") {
           e.preventDefault();
           windowObj.$refs.searchBox.focus();
         }
@@ -93,7 +95,7 @@ export default {
       if (poster_path) {
         return "https://image.tmdb.org/t/p/w500/" + poster_path;
       } else {
-        return "https://via.placeholder.com/50x75";
+        return "src/assets/empty.png";
       }
     },
   },
@@ -122,6 +124,54 @@ img {
   font-size: 17px;
 }
 
+#results {
+  background-color: #555;
+  position: absolute;
+  z-index: 1;
+  top: 10vh;
+  width: 23vw;
+  text-decoration: none;
+  display: block;
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-height: 60vh;
+}
+
+a {
+  text-decoration: none;
+  color: #f7690c;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 1.3vw;
+}
+
+#notfound {
+  font-size: 130%;
+  text-align: center;
+  color: white;
+  font-style: italic;
+}
 @media only screen and (max-width: 700px) {
   .search {
     display: none;

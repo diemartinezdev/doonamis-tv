@@ -4,7 +4,7 @@ import routes from "./routes";
 
 import App from "./App.vue";
 import "@/assets/style.css";
-import api from "@/services/api"
+import api from "@/services/api";
 
 Vue.prototype.$http = api;
 Vue.config.productionTip = false;
