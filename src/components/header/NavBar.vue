@@ -4,7 +4,7 @@
       <img src="@/assets/doonamis-logo.png" alt="doonamis logo" />
     </RouterLink>
     <h1>TV Series</h1>
-    <ul>
+    <ul id="nav-icons">
       <li>
         <RouterLink to="/" class="nav-link"> Top Rated </RouterLink>
       </li>
@@ -12,6 +12,7 @@
         <RouterLink to="/popular" class="nav-link"> Most Popular </RouterLink>
       </li>
     </ul>
+    
   </div>
 </template>
 
@@ -48,7 +49,7 @@ h1 {
   color: #f7690c;
 }
 
-ul {
+#nav-icons {
   display: flex;
   list-style: none;
   margin-left: 6vw;

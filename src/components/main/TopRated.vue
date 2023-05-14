@@ -60,9 +60,9 @@
   
   .container {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-        grid-gap: 2vw;
-        justify-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-gap: 2vw;
+  justify-items: center;
   }
   </style>
   

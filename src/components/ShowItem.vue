@@ -51,28 +51,31 @@ export default {
 
 <style scoped>
 #card {
-margin: 2vw;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  margin: 3vw;
 }
 
-img {
-    width: 20vw;
-}
+a img {
+    width: 18vw;
+    margin: 1vw;
+  }
 
 h3 {
     color: orangered;
-    font-size: 150%;
+    font-size: 1.3vw;
     font-weight: bold;
 text-align: center;
-margin: 5px;
 }
 
 #card-body {
-    display: flex;
+font-size: 1vw;    
     color: white
 }
 
 #card-footer {
-    font-size: small;
+    font-size: 1vw;
     color: grey;
     margin: 3px;
 }
