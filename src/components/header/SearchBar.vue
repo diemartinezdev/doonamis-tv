@@ -178,6 +178,9 @@ a {
     display: none;
   }
 
+  .search {
+    font-size: 14px;
+  }
   #results {
     width: 50%;
     left: 45vw;

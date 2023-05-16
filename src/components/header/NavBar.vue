@@ -32,8 +32,8 @@ img {
 }
 
 h1 {
-  color: hsl(24, 46%, 77%);
-  font-size: 1.8vw;
+  color: #f7690c;
+  font-size: 1.6vw;
   font-style: italic;
   user-select: none;
 }
@@ -56,12 +56,15 @@ h1 {
   gap: 4vw;
 }
 @media only screen and (max-width: 768px) {
+img {
+  width: 80px;
+}
   h1 {
     display: none;
   }
 
   .nav-link {
-font-size: 2vw;
+font-size: 14px;
   }
 
   
