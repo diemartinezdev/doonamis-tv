@@ -147,21 +147,22 @@ button:hover {
 
 @media only screen and (max-width: 768px) {
   #card {
-   display: list-item;
-   
+    display: list-item;
   }
 
   img {
     width: 65vw;
-place-items: center;
-margin-left: 6vw;
+    place-items: center;
+    margin-left: 6vw;
   }
 
   h1 {
     font-size: 25px;
   }
 
-  #genres, p, #seasons {
+  #genres,
+  p,
+  #seasons {
     font-size: 12px;
   }
 

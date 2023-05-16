@@ -57,14 +57,14 @@ h1 {
 }
 @media only screen and (max-width: 768px) {
 img {
-  width: 80px;
+  width: 70px;
 }
   h1 {
     display: none;
   }
 
   .nav-link {
-font-size: 14px;
+font-size: 12px;
   }
 
   
