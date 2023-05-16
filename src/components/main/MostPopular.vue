@@ -65,11 +65,17 @@ h2 {
     .container {
       display: grid;
       grid-template-columns: 50vw 1fr;
-
 }
 
 h2 {
   font-size: 110%;
+}
+}
+
+@media only screen and (max-width: 1080px) {
+    .container {
+      display: grid;
+      grid-template-columns: 50vw 1fr;
 }
 }
 </style>
