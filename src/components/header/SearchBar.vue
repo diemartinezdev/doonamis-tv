@@ -26,7 +26,7 @@
       </div>
     </div>
     <a href="https://www.themoviedb.org/" target="_blank"
-      ><img src="@/assets/tmdb-logo.png" alt="tmdb logo"
+      ><img src="@/assets/tmdb-logo.png" alt="tmdb logo" id="tmdb"
     /></a>
   </div>
 </template>
@@ -172,9 +172,19 @@ a {
   color: white;
   font-style: italic;
 }
-@media only screen and (max-width: 700px) {
-  .search {
+
+@media only screen and (max-width: 768px) {
+  #tmdb {
     display: none;
+  }
+
+  #results {
+    width: 50%;
+    left: 45vw;
+  }
+
+  a {
+    font-size: 12px;
   }
 }
 </style>

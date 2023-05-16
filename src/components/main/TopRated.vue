@@ -50,19 +50,6 @@
   </script>
   
   <style>
-  h2 {
-    font-size: 160%;
-    color: #a14c17;
-    font-weight: bolder;
-    text-transform: uppercase;
-    margin-bottom: 2vh;
-  }
-  
-  .container {
-        display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  grid-gap: 2vw;
-  justify-items: center;
-  }
+
   </style>
   

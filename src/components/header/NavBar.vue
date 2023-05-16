@@ -55,4 +55,15 @@ h1 {
   margin-left: 6vw;
   gap: 4vw;
 }
+@media only screen and (max-width: 768px) {
+  h1 {
+    display: none;
+  }
+
+  .nav-link {
+font-size: 2vw;
+  }
+
+  
+}
 </style>

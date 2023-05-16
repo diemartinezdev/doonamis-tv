@@ -60,4 +60,15 @@ h2 {
   grid-gap: 2vw;
   justify-items: center;
 }
+
+@media only screen and (max-width: 768px) {
+    .container {
+      display: grid;
+  grid-template-columns: 300px 1fr;
+}
+
+h2 {
+  font-size: 110%;
+}
+}
 </style>

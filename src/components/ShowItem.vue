@@ -1,7 +1,7 @@
 <template>
   <div id="card">
     <router-link :to="`/tv/${tv.id}`">
-      <img :src="posterPath" />
+      <img :src="posterPath" class="poster"/>
     </router-link>
     <h3>{{ tv.name }}</h3>
     <div id="card-body">
@@ -53,7 +53,7 @@ export default {
 #card {
   display: flex;
   flex-direction: column;
-  align-content: center;
+  align-items: center;
   margin: 3vw;
 }
 
@@ -78,5 +78,21 @@ font-size: 1vw;
     font-size: 1vw;
     color: grey;
     margin: 3px;
+    text-align: center;
+
+}
+
+@media only screen and (max-width: 768px) {
+  h3 {
+    font-size: 80%;
+  }
+
+  #card-body {
+font-size: 9px;
+}
+
+#card-footer {
+    font-size: 9px;   
+}
 }
 </style>
