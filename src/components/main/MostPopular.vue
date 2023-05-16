@@ -64,7 +64,7 @@ h2 {
 @media only screen and (max-width: 768px) {
     .container {
       display: grid;
-  grid-template-columns: 50vw 1fr;
+      grid-template-columns: 50vw 1fr;
 
 }
 

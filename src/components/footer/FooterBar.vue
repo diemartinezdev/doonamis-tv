@@ -20,8 +20,7 @@ export default {};
 
 <style scoped>
 #foot {
-    
-      background-color: #151b26;
+  background-color: #151b26;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,5 +40,15 @@ p {
 img {
   width: 25px;
   margin: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+  h3 {
+    font-size: 12px;
+  }
+
+  p {
+    font-size: 10px;
+  }
 }
 </style>

@@ -144,4 +144,29 @@ button {
 button:hover {
   box-shadow: rgba(253, 76, 0, 0.5) 0 3px 8px;
 }
+
+@media only screen and (max-width: 768px) {
+  #card {
+   display: list-item;
+   
+  }
+
+  img {
+    width: 65vw;
+place-items: center;
+margin-left: 6vw;
+  }
+
+  h1 {
+    font-size: 25px;
+  }
+
+  #genres, p, #seasons {
+    font-size: 12px;
+  }
+
+  #tagline {
+    font-size: 10px;
+  }
+}
 </style>
