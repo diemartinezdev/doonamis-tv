@@ -1,4 +1,16 @@
-# doonamis-tv
+<h1> Tv Series TMDB </h1>
+
+:rocket:
+<br>
+
+## :dart:	Goals
+
+The project was made with Vue.js. A fully responsive website that is connected to The Movie DB API and take its info.
+
+<br>
+
+<a href="https://ibb.co/KF3WX0v"><img src="https://i.ibb.co/HnkqVF8/Sin-t-tulo.png" alt="screenshot" border="0"></a>
+
 
 ## Project setup
 ```
